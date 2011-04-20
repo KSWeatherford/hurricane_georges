@@ -1,14 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>HurricaneGeorges</title>
-  <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag :defaults %>
+  <title>Hurricane Georges</title>
+  <%= stylesheet_link_tag 'custom', :media => 'screen' %>
   <%= csrf_meta_tag %>
 </head>
 <body>
-
-<%= yield %>
-
+	<div class="container">
+		<header>
+			<div class="title">Hurricane Georges</div>
+			<div class="background_image">
+			<%= image_tag("hurricane_isabelle.jpg", alt:"a satellite photo of a hurricane")%>
+			</div>
+			<nav class="round">
+				<ul>
+					<li><%= link_to "Home", root_path %></li>
+					<li><%= link_to "About", about_path %></li>
+					<li><%= link_to "Contact", contact_path %></li>
+				<ul>
+			</nav>
+		</header>
+		<section class="round">
+			<%= yield %>
+		</section>
+	</div>
 </body>
 </html>
